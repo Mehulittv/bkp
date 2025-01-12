@@ -33,10 +33,10 @@ jobs:
         echo "Listing contents of the root directory (w1928440):"
         rclone lsf w1928440:
         
-    - name: List contents of the root directory
+    - name: List contents of the Jellyfin_BKP directory
       run: |
         echo "Listing contents of the root directory (w1928440):"
-        rclone lsf w1928440:
+        rclone lsf w1928440:Jellyfin_BKP
     - name: Upload file directly from URL to rclone mount
       run: |
         rclone moveto w1928440:Jellyfin_BKP/jellyfin_backup.zip w1928440:Jellyfin_BKP/jellyfin_backup_$(date +%Y-%m-%d).zip
