@@ -27,17 +27,16 @@ jobs:
         token = {"access_token":"ya29.a0AXooCgvBuHaABrOcOFd6XPc7_Jobu7gxIuEclzVoEAjYegVzBlJhuZOdbkQsCba-r2hsrYYELTRl9k1JiC7XJD2zzrmOqO3xWu7t3ne4pbS7uOXsj_4CuTHL0_Zzk3vIJyynmlbHoO71uHJMAcYHi-vFodDsB92N5aD_aCgYKAfgSARESFQHGX2MilerpDwLXbqWI5ph4oidGMg0171","token_type":"Bearer","refresh_token":"1//0gkoI7p7FtaZjCgYIARAAGBASNwF-L9IrrGIqlVBs3630G3I-oUQ7Ic6LyCh152g6USjw7aYnFRdS4q8N-ClGktC3tE85TILngEU","expiry":"2024-07-04T23:03:40.7952531+05:30"}
         team_drive = 
         EOF
-  - name: List contents of the Drive folder
-      run: |
-        echo "Listing contents of the Drive folder:"
-        rclone lsf w1928440:
-
-          - name: List contents of the Drive folder
-      run: |
-        echo "Listing contents of the Drive folder:"
-        rclone lsf w1928440:Jellyfin_BKP
-
         
+    - name: List contents of the root directory
+      run: |
+        echo "Listing contents of the root directory (w1928440):"
+        rclone lsf w1928440:
+        
+    - name: List contents of the root directory
+      run: |
+        echo "Listing contents of the root directory (w1928440):"
+        rclone lsf w1928440:
     - name: Upload file directly from URL to rclone mount
       run: |
         rclone moveto w1928440:Jellyfin_BKP/jellyfin_backup.zip w1928440:Jellyfin_BKP/jellyfin_backup_$(date +%Y-%m-%d).zip
